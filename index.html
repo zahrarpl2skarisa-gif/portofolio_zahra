@@ -1,333 +1,852 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Azza Azzahra | Portfolio</title>
 
-    <!-- Google Font -->
+    <!-- GOOGLE FONT -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Boxicons -->
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
 
-    <!-- HEADER -->
-    <header class="header">
+    <!-- =========================
+         LOADING SCREEN
+    ========================== -->
 
-        <a href="#home" class="logo">
-            Azza<span>.</span>
-        </a>
+    <div class="page-loader" id="pageLoader">
 
-        <i class="bx bx-menu" id="menu-icon"></i>
+        <div class="loader-logo">
+            AZ
+        </div>
+
+        <div class="loader-line">
+            <span></span>
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         NAVBAR + HOME
+    ========================== -->
+
+    <header id="home">
 
         <nav class="navbar">
-            <a href="#home" class="active">Home</a>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
+
+            <!-- LOGO -->
+            <a href="#home" class="brand">
+
+                <span class="brand-dot">
+                    azu
+                </span>
+
+                <span>
+                    Zahra
+                </span>
+
+            </a>
+
+
+            <!-- MENU -->
+            <div class="nav-links" id="navLinks">
+
+                <a href="#home" data-i18n="navHome">
+                    Home
+                </a>
+
+                <a href="#about" data-i18n="navAbout">
+                    About Me
+                </a>
+
+                <a href="#skills" data-i18n="navSkills">
+                    My Skills
+                </a>
+
+                <a href="#projects" data-i18n="navProjects">
+                    My Project
+                </a>
+
+                <a href="#contact" data-i18n="navContact">
+                    Contact
+                </a>
+
+            </div>
+
+
+            <!-- NAV ACTION -->
+            <div class="nav-actions">
+
+                <!-- LANGUAGE -->
+                <button
+                    class="language-switch"
+                    id="languageSwitch"
+                    data-language="en">
+
+                    <span class="lang-id">
+                        ID
+                    </span>
+
+                    <span>
+                        /
+                    </span>
+
+                    <span class="lang-en active">
+                        EN
+                    </span>
+
+                </button>
+
+
+                <!-- MOBILE MENU -->
+                <button
+                    class="menu-button"
+                    id="menuButton">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+            </div>
+
         </nav>
+
+
+
+        <!-- =========================
+             HERO
+        ========================== -->
+
+        <section class="hero section-shell">
+
+            <!-- TEXT -->
+            <div class="hero-copy reveal">
+
+                <p class="eyebrow"
+                   data-i18n="heroEyebrow">
+
+                    Hello, It's Me
+
+                </p>
+
+
+                <h1>
+                    Azza Azzahra
+                </h1>
+
+
+                <p class="hero-role">
+
+                    <span data-i18n="andImA">
+                        And I'm a
+                    </span>
+
+                    <strong data-i18n="student">
+                        Student
+                    </strong>
+
+                </p>
+
+
+                <p class="hero-description"
+                   data-i18n="heroDescription">
+
+                    I love learning technology, creating websites,
+                    building creative projects, and turning ideas
+                    into useful digital experiences.
+
+                </p>
+
+
+                <a href="#about"
+                   class="pill-button pulse-button"
+                   data-i18n="moreAbout">
+
+                    More About Me
+
+                </a>
+
+            </div>
+
+
+
+            <!-- FOTO HERO -->
+            <div class="hero-visual reveal reveal-delay-1">
+
+                <div class="hero-blob"></div>
+
+
+                <!-- FOTO KAMU -->
+                <img
+                    class="hero-photo"
+                    src="assets/profile.png"
+                    alt="Azza Azzahra">
+
+
+                <span class="sticker sticker-one">
+                    HELLO!
+                </span>
+
+
+                <span class="sticker sticker-two">
+                    student
+                </span>
+
+
+                <span class="spark spark-a">
+                    ✦
+                </span>
+
+
+                <span class="spark spark-b">
+                    ♥
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- NAVIGATION MERAH -->
+
+        <div class="red-strip">
+
+            <a href="#home">
+                HOME
+            </a>
+
+            <a href="#about">
+                ABOUT ME
+            </a>
+
+            <a href="#skills">
+                MY SKILLS
+            </a>
+
+            <a href="#projects">
+                MY PROJECT
+            </a>
+
+        </div>
 
     </header>
 
 
-    <!-- HOME -->
-    <section class="home" id="home">
 
-        <div class="home-content">
-
-            <h3>Hello, It's Me</h3>
-
-            <h1>Azza Azzahra</h1>
-
-            <h3>
-                And I'm a
-                <span id="typing"></span>
-            </h3>
-
-            <p>
-                Selamat datang di portfolio saya.
-                Saya senang belajar hal baru, mengembangkan
-                kreativitas, dan mencoba berbagai hal
-                dalam bidang teknologi dan desain.
-            </p>
-
-            <!-- SOCIAL MEDIA -->
-            <div class="social-media">
-
-                <a href="https://www.tiktok.com/" target="_blank">
-                    <i class="bx bxl-tiktok"></i>
-                </a>
-
-                <a href="https://www.instagram.com/" target="_blank">
-                    <i class="bx bxl-instagram"></i>
-                </a>
-
-                <a href="https://wa.me/628xxxxxxxxxx" target="_blank">
-                    <i class="bx bxl-whatsapp"></i>
-                </a>
-
-                <a href="mailto:emailkamu@gmail.com">
-                    <i class="bx bx-envelope"></i>
-                </a>
-
-            </div>
-
-            <a href="#about" class="btn">
-                More About Me
-            </a>
-
-        </div>
+    <main>
 
 
-        <!-- FOTO -->
-        <div class="home-img">
+        <!-- =========================
+             ABOUT ME
+        ========================== -->
 
-            <div class="profile-circle">
+        <section
+            class="about-section"
+            id="about">
 
-                <img src="foto.jpg" alt="Foto Azza Azzahra">
-
-            </div>
-
-        </div>
-
-    </section>
+            <div class="section-shell">
 
 
-    <!-- ABOUT -->
-    <section class="about" id="about">
+                <!-- SOCIAL MEDIA -->
 
-        <div class="about-img">
+                <div class="social-row reveal">
 
-            <img src="foto.jpg" alt="Azza Azzahra">
+                    <!-- TIKTOK -->
+                    <a
+                        class="social-icon"
+                        href="https://www.tiktok.com/@USERNAMEKAMU"
+                        target="_blank">
 
-        </div>
+                        <i class="fa-brands fa-tiktok"></i>
 
-
-        <div class="about-content">
-
-            <h2 class="heading">
-                About <span>Me</span>
-            </h2>
-
-            <h3>Student & Creative Learner</h3>
-
-            <p>
-                Halo! Nama saya Azza Azzahra.
-                Saya adalah seseorang yang memiliki
-                semangat untuk belajar dan mencoba
-                berbagai hal baru.
-            </p>
-
-            <p>
-                Saya tertarik dengan teknologi, desain,
-                kreativitas, dan pengembangan diri.
-                Saya percaya bahwa setiap pengalaman
-                dapat menjadi kesempatan untuk belajar
-                dan berkembang.
-            </p>
-
-            <a href="#skills" class="btn">
-                My Skills
-            </a>
-
-        </div>
-
-    </section>
+                    </a>
 
 
-    <!-- SKILLS -->
-    <section class="skills" id="skills">
+                    <!-- INSTAGRAM -->
+                    <a
+                        class="social-icon"
+                        href="https://www.instagram.com/USERNAMEKAMU/"
+                        target="_blank">
 
-        <h2 class="heading">
-            My <span>Skills</span>
-        </h2>
+                        <i class="fa-brands fa-instagram"></i>
 
-        <div class="skills-container">
-
-            <div class="skill-box">
-                <i class="bx bxl-html5"></i>
-                <h3>HTML</h3>
-                <p>
-                    Membuat struktur website
-                    yang rapi dan terstruktur.
-                </p>
-            </div>
-
-            <div class="skill-box">
-                <i class="bx bxl-css3"></i>
-                <h3>CSS</h3>
-                <p>
-                    Membuat tampilan website
-                    yang menarik dan responsive.
-                </p>
-            </div>
-
-            <div class="skill-box">
-                <i class="bx bxl-javascript"></i>
-                <h3>JavaScript</h3>
-                <p>
-                    Membuat website menjadi
-                    lebih interaktif.
-                </p>
-            </div>
-
-            <div class="skill-box">
-                <i class="bx bx-palette"></i>
-                <h3>Design</h3>
-                <p>
-                    Memiliki ketertarikan pada
-                    desain dan kreativitas.
-                </p>
-            </div>
-
-        </div>
-
-    </section>
+                    </a>
 
 
-    <!-- PROJECTS -->
-    <section class="projects" id="projects">
+                    <!-- WHATSAPP -->
+                    <a
+                        class="social-icon"
+                        href="https://wa.me/628XXXXXXXXXX"
+                        target="_blank">
 
-        <h2 class="heading">
-            My <span>Projects</span>
-        </h2>
+                        <i class="fa-brands fa-whatsapp"></i>
 
-        <p class="projects-subtitle">
-            Beberapa project yang pernah saya buat.
-        </p>
+                    </a>
 
-        <div class="projects-container">
 
-            <!-- PROJECT 1 -->
-            <div class="project-box">
+                    <!-- EMAIL -->
+                    <a
+                        class="social-icon"
+                        href="mailto:EMAILKAMU@gmail.com">
 
-                <div class="project-image">
-                    <img src="project1.jpg" alt="Project 1">
-                </div>
+                        <i class="fa-regular fa-envelope"></i>
 
-                <div class="project-content">
-
-                    <h3>Project 01</h3>
-
-                    <p>
-                        Deskripsi project pertama saya.
-                    </p>
-
-                    <a href="#" class="project-btn">
-                        View Project
-                        <i class="bx bx-right-arrow-alt"></i>
                     </a>
 
                 </div>
 
+
+
+                <!-- TOMBOL -->
+
+                <a
+                    href="#about"
+                    class="mini-title-button reveal"
+                    data-i18n="aboutButton">
+
+                    More About Me
+
+                </a>
+
+
+
+                <!-- ABOUT CONTENT -->
+
+                <div class="about-grid">
+
+
+                    <!-- FOTO -->
+
+                    <div class="about-photo-wrap reveal reveal-left">
+
+                        <div class="about-photo-circle">
+                        </div>
+
+
+                        <!-- GANTI FOTO DI SINI -->
+                        <img
+                            class="about-photo"
+                            src="assets/about.png"
+                            alt="About Azza">
+
+                    </div>
+
+
+
+                    <!-- TEXT -->
+
+                    <div class="about-copy reveal reveal-right">
+
+                        <h2>
+
+                            <span data-i18n="whoIs">
+                                Who is
+                            </span>
+
+                            <strong>
+                                Azza Azzahra?
+                            </strong>
+
+                        </h2>
+
+
+                        <p data-i18n="aboutText">
+
+                            I'm a student who is interested
+                            in technology, web development
+                            and creative design.
+
+                        </p>
+
+
+                        <p data-i18n="aboutText2">
+
+                            I believe every project is a chance
+                            to learn, experiment and create
+                            something meaningful.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- BUTTON -->
+
+                <a
+                    href="#skills"
+                    class="mini-title-button reveal"
+                    data-i18n="mySkillsButton">
+
+                    My Skills
+
+                </a>
+
             </div>
 
+        </section>
 
-            <!-- PROJECT 2 -->
-            <div class="project-box">
 
-                <div class="project-image">
-                    <img src="project2.jpg" alt="Project 2">
+
+        <!-- =========================
+             SKILLS
+        ========================== -->
+
+        <section
+            class="skills-section"
+            id="skills">
+
+            <div class="section-shell">
+
+
+                <h2 class="section-heading reveal">
+
+                    <span data-i18n="my">
+                        My
+                    </span>
+
+                    <em data-i18n="skills">
+                        Skills
+                    </em>
+
+                </h2>
+
+
+
+                <div class="skills-list">
+
+
+                    <!-- HTML -->
+
+                    <article class="skill-card reveal">
+
+                        <div class="skill-icon">
+
+                            <i class="fa-brands fa-html5"></i>
+
+                        </div>
+
+
+                        <h3>
+                            HTML
+                        </h3>
+
+
+                        <p data-i18n="htmlDesc">
+
+                            CREATE A NEAT AND
+                            STRUCTURED WEBSITE STRUCTURE.
+
+                        </p>
+
+                    </article>
+
+
+
+                    <!-- CSS -->
+
+                    <article class="skill-card reveal">
+
+                        <div class="skill-icon">
+
+                            <i class="fa-brands fa-css3-alt"></i>
+
+                        </div>
+
+
+                        <h3>
+                            CSS
+                        </h3>
+
+
+                        <p data-i18n="cssDesc">
+
+                            CREATE AN ATTRACTIVE AND
+                            RESPONSIVE WEBSITE APPEARANCE.
+
+                        </p>
+
+                    </article>
+
+
+
+                    <!-- JAVASCRIPT -->
+
+                    <article class="skill-card reveal">
+
+                        <div class="skill-icon">
+
+                            <i class="fa-brands fa-js"></i>
+
+                        </div>
+
+
+                        <h3>
+                            JAVASCRIPT
+                        </h3>
+
+
+                        <p data-i18n="jsDesc">
+
+                            MAKE THE WEBSITE
+                            MORE INTERACTIVE.
+
+                        </p>
+
+                    </article>
+
+
+
+                    <!-- DESIGN -->
+
+                    <article class="skill-card reveal">
+
+                        <div class="skill-icon">
+
+                            <i class="fa-solid fa-palette"></i>
+
+                        </div>
+
+
+                        <h3 data-i18n="design">
+                            DESIGN
+                        </h3>
+
+
+                        <p data-i18n="designDesc">
+
+                            MAKE SIMPLE AND
+                            CREATIVE DESIGNS.
+
+                        </p>
+
+                    </article>
+
                 </div>
 
-                <div class="project-content">
 
-                    <h3>Project 02</h3>
 
-                    <p>
-                        Deskripsi project kedua saya.
-                    </p>
+                <a
+                    href="#projects"
+                    class="mini-title-button reveal"
+                    data-i18n="myProjectButton">
 
-                    <a href="#" class="project-btn">
-                        View Project
-                        <i class="bx bx-right-arrow-alt"></i>
-                    </a>
+                    My Project
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             PROJECT
+        ========================== -->
+
+        <section
+            class="projects-section"
+            id="projects">
+
+            <div class="section-shell">
+
+
+                <h2 class="section-heading project-heading reveal">
+
+                    <span>
+                        My
+                    </span>
+
+                    <em>
+                        Project
+                    </em>
+
+                </h2>
+
+
+
+                <div class="projects-list">
+
+
+                    <!-- PROJECT 1 -->
+
+                    <article class="project-card reveal reveal-left">
+
+                        <div class="project-photo-frame">
+
+                            <!-- FOTO PROJECT 1 -->
+                            <img
+                                src="assets/project1.jpg"
+                                alt="Project 1">
+
+                            <div class="photo-placeholder">
+
+                                FOTO PROJECT 1
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="project-info">
+
+                            <strong>
+
+                                Project 1
+                                —
+                                simple calculator
+
+                            </strong>
+
+
+                            <p data-i18n="project1Desc">
+
+                                A simple calculator website
+                                made with HTML, CSS and JavaScript.
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- PROJECT 2 -->
+
+                    <article class="project-card reveal reveal-right">
+
+                        <div class="project-photo-frame">
+
+                            <!-- FOTO PROJECT 2 -->
+                            <img
+                                src="assets/project2.jpg"
+                                alt="Project 2">
+
+                            <div class="photo-placeholder">
+
+                                FOTO PROJECT 2
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="project-info">
+
+                            <strong>
+
+                                Project 2
+                                —
+                                simple cashier
+
+                            </strong>
+
+
+                            <p data-i18n="project2Desc">
+
+                                A simple cashier project
+                                designed to calculate purchases.
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- PROJECT 3 -->
+
+                    <article class="project-card reveal reveal-left">
+
+                        <div class="project-photo-frame">
+
+                            <!-- FOTO PROJECT 3 -->
+                            <img
+                                src="assets/project3.jpg"
+                                alt="Project 3">
+
+                            <div class="photo-placeholder">
+
+                                FOTO PROJECT 3
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="project-info">
+
+                            <strong>
+
+                                Project 3
+                                —
+                                "logo BARA API"
+
+                            </strong>
+
+
+                            <p data-i18n="project3Desc">
+
+                                A logo design project
+                                with a creative visual concept.
+
+                            </p>
+
+                        </div>
+
+                    </article>
 
                 </div>
 
             </div>
 
+        </section>
 
-            <!-- PROJECT 3 -->
-            <div class="project-box">
 
-                <div class="project-image">
-                    <img src="project3.jpg" alt="Project 3">
-                </div>
 
-                <div class="project-content">
+        <!-- =========================
+             CONTACT
+        ========================== -->
 
-                    <h3>Project 03</h3>
+        <section
+            class="contact-section"
+            id="contact">
 
-                    <p>
-                        Deskripsi project ketiga saya.
-                    </p>
+            <div class="section-shell">
 
-                    <a href="#" class="project-btn">
-                        View Project
-                        <i class="bx bx-right-arrow-alt"></i>
-                    </a>
 
-                </div>
+                <h2
+                    class="contact-title reveal"
+                    data-i18n="contactMe">
+
+                    Contact Me
+
+                </h2>
+
+
+                <h3
+                    class="reveal"
+                    data-i18n="letsWork">
+
+                    Let's Work Together
+
+                </h3>
+
+
+                <p
+                    class="contact-text reveal"
+                    data-i18n="contactText">
+
+                    Have a project, idea, or collaboration
+                    in mind? Feel free to contact me.
+
+                </p>
+
+
+                <a
+                    class="email-button reveal"
+                    href="mailto:EMAILKAMU@gmail.com">
+
+                    <span data-i18n="sendEmail">
+                        Send Email
+                    </span>
+
+                    <i class="fa-solid fa-paper-plane"></i>
+
+                </a>
 
             </div>
 
-        </div>
+        </section>
 
-    </section>
-
-
-    <!-- CONTACT -->
-    <section class="contact" id="contact">
-
-        <h2 class="heading">
-            Contact <span>Me</span>
-        </h2>
-
-        <div class="contact-container">
-
-            <h3>Let's Work Together</h3>
-
-            <p>
-                Terima kasih sudah mengunjungi portfolio saya.
-                Saya terbuka untuk berdiskusi, bertukar ide,
-                dan belajar bersama.
-            </p>
-
-            <a href="mailto:emailkamu@gmail.com" class="btn">
-                Send Email
-            </a>
-
-        </div>
-
-    </section>
+    </main>
 
 
-    <!-- FOOTER -->
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
     <footer class="footer">
 
-        <p>
-            © 2026 Azza Azzahra. All Rights Reserved.
-        </p>
+        <div class="section-shell footer-inner">
 
-        <a href="#home">
-            <i class="bx bx-up-arrow-alt"></i>
-        </a>
+            <p>
+
+                ©
+                <span id="year"></span>
+
+                Azza Azzahra.
+
+                <span data-i18n="rights">
+                    All rights reserved.
+                </span>
+
+            </p>
+
+
+            <div class="footer-socials">
+
+                <a href="#">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fa-regular fa-envelope"></i>
+                </a>
+
+            </div>
+
+        </div>
 
     </footer>
 
 
+
+    <!-- =========================
+         SCROLL TO TOP
+    ========================== -->
+
+    <button
+        class="scroll-top"
+        id="scrollTop">
+
+        <i class="fa-solid fa-arrow-up"></i>
+
+    </button>
+
+
+
     <!-- JAVASCRIPT -->
+
     <script src="script.js"></script>
 
 </body>

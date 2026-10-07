@@ -1,142 +1,641 @@
-// ============================
-// MENU MOBILE
-// ============================
+/* =========================================
+   LOADING
+========================================= */
 
-const menuIcon = document.getElementById("menu-icon");
-const navbar = document.querySelector(".navbar");
-
-menuIcon.addEventListener("click", function () {
-
-    navbar.classList.toggle("active");
-
-    menuIcon.classList.toggle("bx-x");
-
-});
+const pageLoader =
+    document.getElementById("pageLoader");
 
 
-// ============================
-// MENU OTOMATIS TUTUP
-// ============================
+window.addEventListener("load", function () {
 
-const navLinks = document.querySelectorAll(".navbar a");
+    setTimeout(function () {
 
-navLinks.forEach(function (link) {
+        pageLoader.classList.add("hide");
 
-    link.addEventListener("click", function () {
-
-        navbar.classList.remove("active");
-
-        menuIcon.classList.remove("bx-x");
-
-    });
+    }, 700);
 
 });
 
 
-// ============================
-// TYPING EFFECT
-// ============================
 
-const typingText = document.getElementById("typing");
+/* =========================================
+   MOBILE MENU
+========================================= */
 
-const words = [
-    "Student",
-    "Creative Learner",
-    "Web Enthusiast",
-    "Designer"
-];
+const menuButton =
+    document.getElementById("menuButton");
 
-let wordIndex = 0;
-let letterIndex = 0;
-let deleting = false;
+const navLinks =
+    document.getElementById("navLinks");
 
 
-function typingEffect() {
+menuButton.addEventListener("click", function () {
 
-    const currentWord = words[wordIndex];
+    navLinks.classList.toggle("open");
 
-    if (!deleting) {
 
-        typingText.textContent =
-            currentWord.substring(0, letterIndex + 1);
+    const icon =
+        menuButton.querySelector("i");
 
-        letterIndex++;
 
-        if (letterIndex === currentWord.length) {
+    if (navLinks.classList.contains("open")) {
 
-            deleting = true;
+        icon.classList.remove("fa-bars");
 
-            setTimeout(typingEffect, 1500);
-
-            return;
-        }
+        icon.classList.add("fa-xmark");
 
     } else {
 
-        typingText.textContent =
-            currentWord.substring(0, letterIndex - 1);
+        icon.classList.remove("fa-xmark");
 
-        letterIndex--;
+        icon.classList.add("fa-bars");
 
-        if (letterIndex === 0) {
+    }
 
-            deleting = false;
+});
 
-            wordIndex++;
 
-            if (wordIndex === words.length) {
-                wordIndex = 0;
+
+/* =========================================
+   CLOSE MENU
+   KETIKA MENU DIPENCET
+========================================= */
+
+document
+    .querySelectorAll(".nav-links a")
+    .forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            navLinks.classList.remove("open");
+
+        });
+
+    });
+
+
+
+/* =========================================
+   SCROLL REVEAL ANIMATION
+========================================= */
+
+const revealElements =
+    document.querySelectorAll(".reveal");
+
+
+const revealObserver =
+    new IntersectionObserver(
+
+        function (entries) {
+
+            entries.forEach(function (entry) {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add(
+                        "is-visible"
+                    );
+
+                    revealObserver.unobserve(
+                        entry.target
+                    );
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold: 0.12
+        }
+
+    );
+
+
+revealElements.forEach(function (element) {
+
+    revealObserver.observe(element);
+
+});
+
+
+
+/* =========================================
+   SCROLL TO TOP
+========================================= */
+
+const scrollTopButton =
+    document.getElementById("scrollTop");
+
+
+window.addEventListener("scroll", function () {
+
+
+    if (window.scrollY > 500) {
+
+        scrollTopButton.classList.add("show");
+
+    } else {
+
+        scrollTopButton.classList.remove("show");
+
+    }
+
+});
+
+
+scrollTopButton.addEventListener(
+    "click",
+    function () {
+
+        window.scrollTo({
+
+            top: 0,
+
+            behavior: "smooth"
+
+        });
+
+    }
+);
+
+
+
+/* =========================================
+   LANGUAGE SYSTEM
+========================================= */
+
+const languageSwitch =
+    document.getElementById(
+        "languageSwitch"
+    );
+
+
+const translations = {
+
+
+    /* =========================
+       ENGLISH
+    ========================= */
+
+    en: {
+
+        navHome: "Home",
+
+        navAbout: "About Me",
+
+        navSkills: "My Skills",
+
+        navProjects: "My Project",
+
+        navContact: "Contact",
+
+
+        heroEyebrow:
+            "Hello, It's Me",
+
+        andImA:
+            "And I'm a",
+
+        student:
+            "Student",
+
+
+        heroDescription:
+            "I love learning technology, creating websites, building creative projects, and turning ideas into useful digital experiences.",
+
+
+        moreAbout:
+            "More About Me",
+
+
+        aboutButton:
+            "More About Me",
+
+
+        whoIs:
+            "Who is",
+
+
+        aboutText:
+            "I'm a student who is interested in technology, web development and creative design. I enjoy learning new things, making digital projects, and improving my skills through practice.",
+
+
+        aboutText2:
+            "I believe every project is a chance to learn, experiment and create something meaningful.",
+
+
+        mySkillsButton:
+            "My Skills",
+
+
+        my:
+            "My",
+
+
+        skills:
+            "Skills",
+
+
+        htmlDesc:
+            "CREATE A NEAT AND STRUCTURED WEBSITE STRUCTURE.",
+
+
+        cssDesc:
+            "CREATE AN ATTRACTIVE AND RESPONSIVE WEBSITE APPEARANCE.",
+
+
+        jsDesc:
+            "MAKE THE WEBSITE MORE INTERACTIVE.",
+
+
+        design:
+            "DESIGN",
+
+
+        designDesc:
+            "MAKE SIMPLE AND CREATIVE DESIGNS.",
+
+
+        myProjectButton:
+            "My Project",
+
+
+        project1Desc:
+            "A simple calculator website made with HTML, CSS and JavaScript. This project helped me practice basic logic and interaction.",
+
+
+        project2Desc:
+            "A simple cashier project designed to calculate purchases and practice JavaScript interaction.",
+
+
+        project3Desc:
+            "A logo design project created with a bold and playful visual concept.",
+
+
+        contactMe:
+            "Contact Me",
+
+
+        letsWork:
+            "Let's Work Together",
+
+
+        contactText:
+            "Have a project, idea, or collaboration in mind? Feel free to contact me and let's create something together.",
+
+
+        sendEmail:
+            "Send Email",
+
+
+        rights:
+            "All rights reserved."
+
+    },
+
+
+
+    /* =========================
+       INDONESIA
+    ========================= */
+
+    id: {
+
+        navHome:
+            "Beranda",
+
+        navAbout:
+            "Tentang Saya",
+
+        navSkills:
+            "Keahlian",
+
+        navProjects:
+            "Proyek Saya",
+
+        navContact:
+            "Kontak",
+
+
+        heroEyebrow:
+            "Halo, Ini Saya",
+
+
+        andImA:
+            "Dan saya seorang",
+
+
+        student:
+            "Pelajar",
+
+
+        heroDescription:
+            "Saya suka mempelajari teknologi, membuat website, mengembangkan proyek kreatif, dan mengubah ide menjadi pengalaman digital yang bermanfaat.",
+
+
+        moreAbout:
+            "Lebih Tentang Saya",
+
+
+        aboutButton:
+            "Lebih Tentang Saya",
+
+
+        whoIs:
+            "Siapa",
+
+
+        aboutText:
+            "Saya adalah seorang pelajar yang tertarik pada teknologi, pengembangan web, dan desain kreatif. Saya senang mempelajari hal baru, membuat proyek digital, dan meningkatkan kemampuan melalui latihan.",
+
+
+        aboutText2:
+            "Saya percaya setiap proyek adalah kesempatan untuk belajar, bereksperimen, dan menciptakan sesuatu yang bermakna.",
+
+
+        mySkillsButton:
+            "Keahlian Saya",
+
+
+        my:
+            "Keahlian",
+
+
+        skills:
+            "Saya",
+
+
+        htmlDesc:
+            "MEMBUAT STRUKTUR WEBSITE YANG RAPI DAN TERSTRUKTUR.",
+
+
+        cssDesc:
+            "MEMBUAT TAMPILAN WEBSITE YANG MENARIK DAN RESPONSIF.",
+
+
+        jsDesc:
+            "MEMBUAT WEBSITE MENJADI LEBIH INTERAKTIF.",
+
+
+        design:
+            "DESAIN",
+
+
+        designDesc:
+            "MEMBUAT DESAIN YANG SEDERHANA DAN KREATIF.",
+
+
+        myProjectButton:
+            "Proyek Saya",
+
+
+        project1Desc:
+            "Website kalkulator sederhana yang dibuat dengan HTML, CSS, dan JavaScript. Proyek ini membantu saya berlatih logika dasar dan interaksi.",
+
+
+        project2Desc:
+            "Proyek kasir sederhana untuk menghitung pembelian sekaligus melatih interaksi menggunakan JavaScript.",
+
+
+        project3Desc:
+            "Proyek desain logo dengan konsep visual yang tegas dan kreatif.",
+
+
+        contactMe:
+            "Hubungi Saya",
+
+
+        letsWork:
+            "Mari Bekerja Sama",
+
+
+        contactText:
+            "Punya proyek, ide, atau ingin berkolaborasi? Silakan hubungi saya dan mari membuat sesuatu bersama.",
+
+
+        sendEmail:
+            "Kirim Email",
+
+
+        rights:
+            "Hak cipta dilindungi."
+
+    }
+
+};
+
+
+
+/* =========================================
+   FUNCTION GANTI BAHASA
+========================================= */
+
+function setLanguage(language) {
+
+
+    const elements =
+        document.querySelectorAll(
+            "[data-i18n]"
+        );
+
+
+    elements.forEach(function (element) {
+
+
+        const key =
+            element.dataset.i18n;
+
+
+        if (translations[language][key]) {
+
+            element.textContent =
+                translations[language][key];
+
+        }
+
+    });
+
+
+    languageSwitch.dataset.language =
+        language;
+
+
+    document.documentElement.lang =
+        language;
+
+
+    /* simpan pilihan bahasa */
+
+    localStorage.setItem(
+        "portfolioLanguage",
+        language
+    );
+
+
+    /* animasi tombol */
+
+    languageSwitch.animate(
+
+        [
+
+            {
+                transform: "scale(1)"
+            },
+
+            {
+                transform:
+                    "scale(1.12) rotate(-3deg)"
+            },
+
+            {
+                transform: "scale(1)"
             }
+
+        ],
+
+        {
+
+            duration: 350,
+
+            easing: "ease-out"
+
+        }
+
+    );
+
+}
+
+
+
+/* =========================================
+   TOMBOL SWITCH BAHASA
+========================================= */
+
+languageSwitch.addEventListener(
+    "click",
+    function () {
+
+
+        const currentLanguage =
+            languageSwitch.dataset.language;
+
+
+        if (currentLanguage === "en") {
+
+            setLanguage("id");
+
+        } else {
+
+            setLanguage("en");
 
         }
 
     }
+);
 
-    const speed = deleting ? 50 : 100;
 
-    setTimeout(typingEffect, speed);
+
+/* =========================================
+   LOAD BAHASA YANG TERAKHIR DIPILIH
+========================================= */
+
+const savedLanguage =
+    localStorage.getItem(
+        "portfolioLanguage"
+    );
+
+
+if (savedLanguage) {
+
+    setLanguage(savedLanguage);
+
+} else {
+
+    setLanguage("en");
+
 }
 
 
-typingEffect();
+
+/* =========================================
+   TAHUN FOOTER OTOMATIS
+========================================= */
+
+document.getElementById("year")
+    .textContent =
+    new Date().getFullYear();
 
 
-// ============================
-// ACTIVE NAVBAR SAAT SCROLL
-// ============================
 
-const sections = document.querySelectorAll("section");
+/* =========================================
+   ANIMASI CARD SKILLS
+========================================= */
 
-window.addEventListener("scroll", function () {
+const skillCards =
+    document.querySelectorAll(
+        ".skill-card"
+    );
 
-    let currentSection = "";
 
-    sections.forEach(function (section) {
+skillCards.forEach(function (card) {
 
-        const sectionTop = section.offsetTop - 150;
 
-        if (window.scrollY >= sectionTop) {
+    card.addEventListener(
+        "mousemove",
+        function (event) {
 
-            currentSection = section.getAttribute("id");
+
+            if (window.innerWidth < 700) {
+
+                return;
+
+            }
+
+
+            const rect =
+                card.getBoundingClientRect();
+
+
+            const x =
+                event.clientX -
+                rect.left;
+
+
+            const y =
+                event.clientY -
+                rect.top;
+
+
+            const rotateX =
+                ((y / rect.height) - .5)
+                * -4;
+
+
+            const rotateY =
+                ((x / rect.width) - .5)
+                * 4;
+
+
+            card.style.transform =
+                `translateY(-8px)
+                 perspective(700px)
+                 rotateX(${rotateX}deg)
+                 rotateY(${rotateY}deg)`;
 
         }
+    );
 
-    });
 
 
-    navLinks.forEach(function (link) {
+    card.addEventListener(
+        "mouseleave",
+        function () {
 
-        link.classList.remove("active");
-
-        if (
-            link.getAttribute("href") ===
-            "#" + currentSection
-        ) {
-
-            link.classList.add("active");
+            card.style.transform = "";
 
         }
-
-    });
+    );
 
 });
